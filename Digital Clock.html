@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Digital Clock</title>
+<style>
+body {
+  background: #000;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  font-size: 80px;
+  letter-spacing: 5px;
+  position: relative;
+  text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Optional: animated seconds indicator */
+.seconds {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background: #0f0;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="clock">
+  12<span class="blink">:</span>45
+  <div class="seconds"></div>
+</div>
+<script src="Digital Clock.js"></script>
+</body>
+</html>
